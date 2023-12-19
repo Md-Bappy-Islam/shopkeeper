@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users")->onUpdate("cascade")->onDelete("restrict");
             $table->unsignedBigInteger("product_id");
-            $table->foreign("product_id")->references("id")->on("products")->onUpdate("cascade")->onDelete("restrict");
+            $table->foreign("product_id")->references("id")->on("products")->onUpdate("cascade");
             $table->timestamp("created_at")->useCurrent();
             $table->timestamp("updated_at")->useCurrent();
         });

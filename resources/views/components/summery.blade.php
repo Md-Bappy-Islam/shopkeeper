@@ -29,6 +29,7 @@
                                                             Ammount-$<span class="counter-value"
                                                                 data-target="{{ $TotoalPrice }}">0</span>
                                                         </h3>
+                                                        <p class="text-primary">View full details</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -57,6 +58,7 @@
                                                             Ammount-$<span class="counter-value"
                                                                 data-target="{{ $YesterdayTotalAmmount }}">0</span>
                                                         </h3>
+                                                        <p class="text-primary">View full details</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -85,6 +87,7 @@
                                                             Ammount-$<span class="counter-value"
                                                                 data-target="{{ $ThisMonthTotalAmmount }}">0</span>
                                                         </h3>
+                                                        <p class="text-primary">View full details</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,6 +116,7 @@
                                                             Ammount-$<span class="counter-value"
                                                                 data-target="{{ $LastMonthTotalAmmount }}">0</span>
                                                         </h3>
+                                                        <p class="text-primary">View full details</p>
                                                     </div>
                                                 </div>
                                             </div>

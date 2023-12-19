@@ -5,6 +5,7 @@
             <div class="col-md-12 ">
                 <a href="/add_product" class="btn btn-danger col-md-2 mb-5 mt-2 "> Add Product </a>
                 <h4 class="mb-4">Our Products</h4>
+                <hr>
                 <div class="row">
                     @if (session("success"))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">

@@ -45,7 +45,7 @@ class productController extends Controller
             return redirect()->route('product.all')->with('success', 'product stored successfully!');
     }
     public function allProduct(){
-        $products=DB::table("products")->get();
+        $products=DB::table("products")->orderByDesc('id')->get();
         return view('pages.products',["products"=>$products]);
         
     }
@@ -57,9 +57,9 @@ class productController extends Controller
     }
     public function destroy($id){
         $product=DB::table("products")->where("id",$id)->first();
-        $removeFile=unlink(public_path($product->image));
+        $removeFile=DB::table("products")->where("id",$id)->delete();
         if($removeFile){
-            DB::table("products")->where("id",$id)->delete();
+            unlink(public_path($product->image));
             return redirect()->back()->with('success','product delete successfully');
         }
     }
@@ -76,15 +76,12 @@ class productController extends Controller
             "price"=>"required",
             "stock"=>"required",
             "discount"=>"required",
-
         ]);
-
         if($request->hasFile("image")){
             $image=$request->file("image");
             $imageName= "asset/images/products/"."product".time().$image->getClientOriginalName();
             $image->move(public_path("asset/images/products"),$imageName);
 
-       
         DB::table("products")->where('id',$id)->update([
             "user_id"=>1,
             "title"=> $request->input('title'),
@@ -111,8 +108,6 @@ class productController extends Controller
         ]);
     }
         return redirect()->route('product.show',$product->id)->with('success', 'product update successfully!');
-
-
     }
 
 

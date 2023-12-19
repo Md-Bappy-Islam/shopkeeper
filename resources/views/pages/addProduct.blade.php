@@ -22,7 +22,7 @@
                                         <div class="mb-3">
                                             <label for="compnayNameinput" class="form-label">Description</label>
                                             {{-- <input type="text" class="form-control" id="compnayNameinput" name="description"> --}}
-                                            <textarea name="description" value="{{ old('description') }}" id="compnayNameinput" class="form-control"></textarea>
+                                            <textarea name="description"id="compnayNameinput" class="form-control">{{ old('description') }}</textarea>
                                             @error('description')
                                             <p class="text-danger"> {{ $message }}</p>
                                         @enderror
